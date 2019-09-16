@@ -1,0 +1,14 @@
+김결정 has connected to Discord!
+  File "./decision_kim.py", line 46
+    keyword = message.content.split()[1]+\'n'
+                                            ^
+SyntaxError: unexpected character after line continuation character
+김결정 has connected to Discord!
+  File "./decision_kim.py", line 52
+    if keyword[0] = ' ':
+                  ^
+SyntaxError: invalid syntax
+김결정 has connected to Discord!
+김결정 has connected to Discord!
+김결정 has connected to Discord!
+김결정 has connected to Discord!
