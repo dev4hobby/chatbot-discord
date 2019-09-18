@@ -42,14 +42,17 @@ async def on_message(message):
     if message.author == client.user:
         return
    
-    if message.content[0:6] == ';;play':
+    if message.content[0:6] == ';;play' or message.content[0:3] == ';;p':
         keyword = message.content.split()
+        result = ''
         if len(keyword) == 2:
-            keyword = '_['+keyword[1]+']\n'
+            result = '_['+keyword[1]+']\n'
         elif len(keyword) > 2:
-            keyword = message.content[6:].replace('\n', '')
+            keyword = [key for key in keyword if key]
+            for i in range(1, len(keyword)):
+                result += (keyword[i]+' ')
         song_list = open('SongList', 'a')
-        song_list.write(keyword)
+        song_list.write(result)
         song_list.close()
 
 
@@ -68,6 +71,7 @@ async def on_message(message):
             song_fd = open('SongList', 'r')
             song_list = song_fd.read().split('\n')
             song_list = [song for song in song_list if song]
+            song_list.reverse()
             song_fd.close()
             if len(command) == 1:
                 if len(song_list) < 5:
@@ -221,9 +225,13 @@ async def on_message(message):
         await message.channel.send('이봐.. 젊은이....')
     if message.content.find('연어') >= 0:
         await message.channel.send('노르웨이산 연어가 단돈 x000원')
+    
+    if message.content == '망고나와라!':
+        result = '그러게요.. 뭐하고있을까요..'
+        await message.channel.send(result)
 
     if message.content == '도움!':
-        result = '`김결정 ~?` : 선장들을 위한 완벽한 친구.\n`!주사위` : 주사위를 굴려 월드보스를 조져보세용\n`!둠칫둠칫` : 김결정이 자동으로 춤을 춰줍니다.\n`!발사` : 러시안룰렛. 당신의 운을 시험해보세요.\n`!날씨 ${지역}` : 지역별 날씨를 알려줍니다.\n\n`안녕하살법!`, `배고파`, `밥해줘`, `너무해!`, `초코우유`'
+        result = '`김결정 ~?` : 선장들을 위한 완벽한 친구.\n`!아까그곡` : FredBoat이 재생한 노래를 기억해뒀다가 알려줘요.\n`!주사위` : 주사위를 굴려 월드보스를 조져보세용\n`!둠칫둠칫` : 김결정이 자동으로 춤을 춰줍니다.\n`!발사` : 러시안룰렛. 당신의 운을 시험해보세요.\n`!날씨 ${지역}` : 지역별 날씨를 알려줍니다.\n\n`안녕하살법!`, `배고파`, `밥해줘`, `너무해!`, `초코우유`'
         await message.channel.send(result)
 
 
