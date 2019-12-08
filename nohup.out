@@ -1319,3 +1319,26 @@ discord.errors.Forbidden: 403 FORBIDDEN (error code: 50007): Cannot send message
 김결정 has connected to Discord!
 김결정 has connected to Discord!
 김결정 has connected to Discord!
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/discord/http.py", line 258, in static_login
+    data = await self.request(Route('GET', '/users/@me'))
+  File "/usr/local/lib/python3.6/dist-packages/discord/http.py", line 222, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 401 UNAUTHORIZED (error code: 0): 401: Unauthorized
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "./decision_kim.py", line 238, in <module>
+    client.run(token)
+  File "/usr/local/lib/python3.6/dist-packages/discord/client.py", line 598, in run
+    return future.result()
+  File "/usr/local/lib/python3.6/dist-packages/discord/client.py", line 579, in runner
+    await self.start(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/discord/client.py", line 542, in start
+    await self.login(*args, bot=bot)
+  File "/usr/local/lib/python3.6/dist-packages/discord/client.py", line 400, in login
+    await self.http.static_login(token, bot=bot)
+  File "/usr/local/lib/python3.6/dist-packages/discord/http.py", line 262, in static_login
+    raise LoginFailure('Improper token has been passed.') from exc
+discord.errors.LoginFailure: Improper token has been passed.
