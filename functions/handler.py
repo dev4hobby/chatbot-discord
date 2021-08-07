@@ -12,11 +12,11 @@ async def dynamic_message_handler(message, client):
     if message.author == client.user:
         return status
 
-    if message.content.startswith("갓챠"):
-        await message.channel.send("50:50 너의 운빨은-")
+    if message.content.startswith("동전던지기"):
+        await message.channel.send("앞? 뒤?")
         await message.channel.send(await get_result())
 
-    elif message.content.startswith("단호박"):
+    elif message.content.startswith("김결정"):
         await message.channel.send(await get_answer())
     elif message.content.startswith("둠칫"):
         await shake_your_body(message)
