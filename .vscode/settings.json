@@ -1,0 +1,10 @@
+{
+    "git.ignoreLimitWarning": true,
+    "terminal.integrated.automationShell.windows": "cmd.exe",
+    "terminal.integrated.automationShell.osx": "zsh",
+    "terminal.integrated.env.osx": {
+		"PATH": ""
+    },
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black"
+}
