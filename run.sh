@@ -1,2 +1,2 @@
 #!/bin/bash
-nohup ./decision_kim.py &
+nohup ./run.py &

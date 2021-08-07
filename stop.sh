@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo pkill -f decision_kim.py
+sudo pkill -f run.py
