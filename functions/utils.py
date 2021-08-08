@@ -6,6 +6,7 @@ from os import walk, path
 
 def sync_local_image(dir_name) -> Tuple:
     image_file_ext = [".jpg", ".jpeg", ".png", ".gif", ".bmp"]
+    image_file_ext += [ext.upper() for ext in image_file_ext]
     return (
         path.join(dp, f)
         for dp, dn, filenames in walk(dir_name)
