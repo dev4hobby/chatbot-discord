@@ -15,7 +15,7 @@ def initializer():
         for file_path in sync_local_image(IMG_DIR)
     }
     with open(IMG_JSON_DIR, "w", encoding="UTF8") as json_file:
-        json.dump(image_dict, json_file)
+        json.dump(image_dict, json_file, ensure_ascii=False)
 
     context = {
         "secrets": json.loads(open("./secrets.json", encoding="UTF8").read()),
