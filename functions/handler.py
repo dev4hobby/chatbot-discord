@@ -1,4 +1,3 @@
-from modules.gotcha import get_result
 from modules.decide import get_answer
 from modules.shake import shake_your_body
 from modules.weather import check_weather
@@ -12,12 +11,8 @@ async def dynamic_message_handler(message, client):
     if message.author == client.user:
         return status
 
-    if message.content.startswith("동전던지기"):
-        await message.channel.send("앞? 뒤?")
+    if message.content.startswith("김결정"):
         await message.channel.send(await get_result())
-
-    elif message.content.startswith("김결정"):
-        await message.channel.send(await get_answer())
     elif message.content.startswith("둠칫"):
         await shake_your_body(message)
     elif message.content.startswith("날씨"):

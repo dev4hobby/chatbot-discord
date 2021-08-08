@@ -1,8 +1,9 @@
 from random import randint
 
 
-async def get_answer() -> str:
-    answer = "응"
-    if randint(0, 100) % 2 == 0:
-        answer = "놉"
-    return answer
+async def get_result() -> str:
+    result = "ㅇㅇ"
+    number = randint(0, 1)
+    if number == 0:
+        result = "ㄴㄴ"
+    return result
