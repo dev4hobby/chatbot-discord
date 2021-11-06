@@ -1,4 +1,4 @@
-from modules.decide import get_answer
+from modules.decide import get_result
 from modules.shake import shake_your_body
 from modules.weather import check_weather
 from modules.russian_roulette import Gun
