@@ -9,7 +9,7 @@ IMG_DIR = path.join(BASE_DIR, "assets", "images")
 DANCE = False
 default_secrets = {
     "MUSIC_PREFIX": "!",
-    "DISCORD_BOT_TOKEN": "",
+    "DISCORD_BOT_TOKEN": getenv("DISCORD_BOT_TOKEN", ""),
 }
 
 
@@ -22,7 +22,7 @@ def initializer():
         json.dump(image_dict, json_file, ensure_ascii=False)
 
     context = {
-        "secrets": getenv("DISCORD_BOT_TOKEN", default_secrets),
+        "secrets": default_secrets,
         "keywords": json.loads(open("./keywords.json", encoding="UTF8").read()),
         "images": json.loads(open("./images.json", encoding="UTF8").read()),
     }

@@ -10,9 +10,11 @@ from functions.initializer import (
     initializer,
 )
 
-# from modules.sound import Music
+from modules.sound import Music
+
 ctx = initializer()
-client = commands.Bot(command_prefix=ctx["secrets"].get("MUSIC_PREFIX", "!"))
+music_prefix = ctx["secrets"].get("MUSIC_PREFIX", "!")
+client = commands.Bot(command_prefix=music_prefix)
 
 
 @client.event
@@ -23,7 +25,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith(ctx["secrets"].get("MUSIC_PREFIX", "!")):
+    if message.content.startswith(music_prefix):
         await client.process_commands(message)
     else:
         if ctx["images"].get(message.content):
@@ -35,7 +37,7 @@ async def on_message(message):
 
 
 try:
-    # client.add_cog(Music(client)
+    client.add_cog(Music(client))
     client.run(ctx["secrets"].get("DISCORD_BOT_TOKEN", None))
 except Exception as e:
     print("Check your DISCORD_BOT_TOKEN")
