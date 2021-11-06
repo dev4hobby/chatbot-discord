@@ -1,6 +1,6 @@
 import json
 from .utils import sync_local_image, get_hash
-from os import path
+from os import path, getenv
 
 BASE_DIR = path.dirname(path.dirname(path.abspath(__file__)))
 IMG_JSON_DIR = path.join(BASE_DIR, "images.json")
@@ -18,7 +18,7 @@ def initializer():
         json.dump(image_dict, json_file, ensure_ascii=False)
 
     context = {
-        "secrets": json.loads(open("./secrets.json", encoding="UTF8").read()),
+        "secrets": getenv("DISCORD_BOT_TOKEN"),
         "keywords": json.loads(open("./keywords.json", encoding="UTF8").read()),
         "images": json.loads(open("./images.json", encoding="UTF8").read()),
     }
