@@ -35,8 +35,7 @@ async def on_message(message):
 
 
 try:
-    # client.add_cog(Music(client))
-    client.run(ctx["secrets"].get("DISCORD_TOKEN", None))
+    # client.add_cog(Music(client)
+    client.run(ctx["secrets"].get("DISCORD_BOT_TOKEN", None))
 except Exception as e:
-    print(e)
-    print("Check your DISCORD_TOKEN")
+    print("Check your DISCORD_BOT_TOKEN")
