@@ -4,7 +4,7 @@ from os import path, getenv
 
 BASE_DIR = path.dirname(path.dirname(path.abspath(__file__)))
 IMG_JSON_DIR = path.join(BASE_DIR, "images.json")
-IMG_DIR = path.join(BASE_DIR, "assets", "images")
+IMG_DIR = path.join(BASE_DIR, "tmp", "images")
 
 DANCE = False
 default_secrets = {
