@@ -13,7 +13,7 @@ from functions.initializer import (
 from modules.sound import Music
 
 ctx = initializer()
-music_prefix = ctx["secrets"].get("MUSIC_PREFIX", "!")
+music_prefix = ctx["secrets"].get("MUSIC_PREFIX", ".")
 client = commands.Bot(command_prefix=music_prefix)
 
 

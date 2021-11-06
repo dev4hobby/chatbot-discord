@@ -8,8 +8,11 @@ IMG_DIR = path.join(BASE_DIR, "assets", "images")
 
 DANCE = False
 default_secrets = {
-    "MUSIC_PREFIX": "!",
-    "DISCORD_BOT_TOKEN": getenv("DISCORD_BOT_TOKEN", ""),
+    "MUSIC_PREFIX": ".",
+    "DISCORD_BOT_TOKEN": getenv(
+        "DISCORD_BOT_TOKEN",
+        "",
+    ),
 }
 
 
