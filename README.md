@@ -49,6 +49,15 @@ upload your `Procfile` and enable Dyno
 
 Go to [Discord developer console > Bot](https://discord.com/developers/applications) and copy your Bot token.
 
+### Aptfile
+
+```bash
+wget
+```
+
 ### Buildpacks
 
 `heroku/python`
+`https://github.com/heroku/heroku-buildpack-apt.git`
+`https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git`
+`https://github.com/xrisk/heroku-opus.git`
